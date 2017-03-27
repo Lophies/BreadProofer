@@ -33,7 +33,7 @@ void loop()
     sumtemp += temp1 += temp2 += temp3;
     sumhum += hum1 += hum2 += hum3;
 
-    delay(1000);    //Length of measuring interval / 10
+    delay(1000);    //Sets the length of the measuring interval / 10
   }
 
   float avgtemp = sumtemp / 30;   //Calculate the average temperature over the measuring interval (# of sensors * # of measurements)
