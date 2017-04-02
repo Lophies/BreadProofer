@@ -1,4 +1,4 @@
-#include <dht11.h>
+#include <dht11.h>    //Uses the DHT11 Arduino library: http://playground.arduino.cc/Main/DHT11Lib
 
 dht11 DHT11_1;
 dht11 DHT11_2;
