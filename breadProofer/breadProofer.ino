@@ -11,6 +11,13 @@ dht11 DHT11_3;
 #define RELAY_TEMP_2_PIN 6  //Arduino output pin that controls the heating element 2 relay
 #define RELAY_HUM_PIN 7     //Arduino output pin that controls the humidifier relay
 
+float minHum = 60;
+float maxHum = 80;
+float minTemp = 35;
+float maxTemp = 40;
+int numSensors = 3;
+int numMeasurements = 10;
+
 void setup()
 {
     pinMode(5, OUTPUT); //Set all relay pins as outputs
@@ -20,9 +27,9 @@ void setup()
 
 void loop()
 {
-    float sumtemp = 0;    //Reset sumtemp at the start of each for loop
-    float sumhum = 0;     //Reset sumhum at the start of each for loop
-    for (int i = 0; i < 10; i++)    //Measure temperature and humidity 10 times for each sensor
+    float sumTemp = 0;    //Reset sumTemp at the start of each for loop
+    float sumHum = 0;     //Reset sumHum at the start of each for loop
+    for (int i = 0; i < numMeasurements; i++)    //Measure temperature and humidity 10 times for each sensor
     {
         DHT11_1.read(DHT11_1_PIN);    //Read sensor 1
         float temp1 = DHT11_1.temperature;
@@ -36,31 +43,31 @@ void loop()
         float temp3 = DHT11_3.temperature;
         float hum3 = DHT11_3.humidity;
 
-        sumtemp += temp1 += temp2 += temp3;
-        sumhum += hum1 += hum2 += hum3;
+        sumTemp += temp1 += temp2 += temp3;
+        sumHum += hum1 += hum2 += hum3;
 
         delay(1000);    //Length of the measuring interval / # of measurements
                         //Note: DHT11 has a 1 Hz sampling rate so the delay must be >= 1000 ms
     }
 
-    float avgtemp = sumtemp / 30;   //Calculate the average temperature over the measuring interval (# of sensors * # of measurements)
-    float avghum = sumhum / 30;   //Calculate the average humidity over the measuring interval (# of sensors * # of measurements)
+    float avgTemp = sumTemp / (numSensors * numMeasurements);   //Calculate the average temperature over the measuring interval (# of sensors * # of measurements)
+    float avgHum = sumHum / (numSensors * numMeasurements );   //Calculate the average humidity over the measuring interval (# of sensors * # of measurements)
 
-    if (avgtemp < 35) //Low temperature at which the heating elements turn on (in °C)
+    if (avgTemp < minTemp) //Low temperature at which the heating elements turn on (in °C)
     {
         digitalWrite(RELAY_TEMP_1_PIN, HIGH);
         digitalWrite(RELAY_TEMP_2_PIN, HIGH);
     }
-    else if (avg temp > 38)   //High temperature at which the heating elements turn off (in °C)
+    else if (avgTemp > maxTemp)   //High temperature at which the heating elements turn off (in °C)
     {
         digitalWrite(RELAY_TEMP_1_PIN, LOW);
         digitalWrite(RELAY_TEMP_2_PIN, LOW);
     }
-    if (avghum < 60)  //Low humidity at which the humidifier turns on (in %)
+    if (avgHum < minHum)  //Low humidity at which the humidifier turns on (in %)
     {
         digitalWrite(RELAY_HUM_PIN, HIGH);
     }
-    else if (avghum > 80) //High humidity at which the humidifier turns off (in %)
+    else if (avgHum > maxHum) //High humidity at which the humidifier turns off (in %)
     {
         digitalWrite(RELAY_HUM_PIN, LOW);
     }
