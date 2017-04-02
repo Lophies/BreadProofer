@@ -7,3 +7,7 @@ Hardware used:
 - SODIAL 5V 4-Channel Relay Module (1x)
 - Ecloud Shop DHT11 sensor (3x)
 - Heating elements (to be determined)
+- Bionaire compact warm mist humidifier, model: CM1 (1x)
+  2.25 l Removable water tank
+  4,8 l /24 h warm mist output
+  220W
