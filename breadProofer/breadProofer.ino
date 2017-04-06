@@ -7,9 +7,10 @@ dht11 DHT11_3;
 #define DHT11_1_PIN 2   //Arduino input pin for DHT11 sensor 1
 #define DHT11_2_PIN 3   //Arduino input pin for DHT11 sensor 2
 #define DHT11_3_PIN 4   //Arduino input pin for DHT11 sensor 3
-#define RELAY_TEMP_1_PIN 5  //Arduino output pin that controls the heating element 1 relay
-#define RELAY_TEMP_2_PIN 6  //Arduino output pin that controls the heating element 2 relay
-#define RELAY_HUM_PIN 7     //Arduino output pin that controls the humidifier relay
+#define RELAY_TEMP_1_PIN 5  //Arduino output pin that controls the heating elements 1-2 relay, connected to IN1 on the relay board
+#define RELAY_TEMP_2_PIN 6  //Arduino output pin that controls the heating elements 3-4 relay, connected to IN2 on the relay board
+#define RELAY_TEMP_3_PIN 7  //Arduino output pin that controls the heating elements 5-6 relay, connected to IN3 on the relay board
+#define RELAY_HUM_PIN 8     //Arduino output pin that controls the humidifier relay, connected to IN4 on the relay board
 
 float minHum = 60;
 float maxHum = 80;
@@ -57,11 +58,13 @@ void loop()
     {
         digitalWrite(RELAY_TEMP_1_PIN, HIGH);
         digitalWrite(RELAY_TEMP_2_PIN, HIGH);
+        digitalWrite(RELAY_TEMP_3_PIN, HIGH);
     }
     else if (avgTemp > maxTemp)   //High temperature at which the heating elements turn off (in °C)
     {
         digitalWrite(RELAY_TEMP_1_PIN, LOW);
         digitalWrite(RELAY_TEMP_2_PIN, LOW);
+        digitalWrite(RELAY_TEMP_3_PIN, LOW);
     }
     if (avgHum < minHum)  //Low humidity at which the humidifier turns on (in %)
     {
