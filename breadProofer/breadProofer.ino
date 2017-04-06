@@ -21,10 +21,10 @@ int numMeasurements = 10;
 
 void setup()
 {
-    pinMode(5, OUTPUT); //Set all relay pins as outputs
-    pinMode(6, OUTPUT);
-    pinMode(7, OUTPUT);
-    pinMode(8, OUTPUT);
+    pinMode(RELAY_TEMP_1_PIN, OUTPUT); //Set all relay pins as outputs
+    pinMode(RELAY_TEMP_2_PIN, OUTPUT);
+    pinMode(RELAY_TEMP_3_PIN, OUTPUT);
+    pinMode(RELAY_HUM_PIN, OUTPUT);
 }
 
 void loop()
