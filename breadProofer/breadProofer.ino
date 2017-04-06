@@ -24,6 +24,7 @@ void setup()
     pinMode(5, OUTPUT); //Set all relay pins as outputs
     pinMode(6, OUTPUT);
     pinMode(7, OUTPUT);
+    pinMode(8, OUTPUT);
 }
 
 void loop()
