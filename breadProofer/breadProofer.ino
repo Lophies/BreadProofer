@@ -45,8 +45,12 @@ void loop()
         float temp3 = DHT11_3.temperature;
         float hum3 = DHT11_3.humidity;
 
-        sumTemp += temp1 += temp2 += temp3;
-        sumHum += hum1 += hum2 += hum3;
+        sumTemp += temp1;
+        sumTemp += temp2;
+        sumTemp += temp3;
+        sumHum += hum1;
+        sumHum += hum2;
+        sumHum += hum3;
 
         delay(1000);    //Length of the measuring interval / # of measurements
                         //Note: DHT11 has a 1 Hz sampling rate so the delay must be >= 1000 ms
