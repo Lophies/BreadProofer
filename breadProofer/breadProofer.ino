@@ -14,8 +14,8 @@ dht11 DHT11_3;
 
 float minHum = 60;
 float maxHum = 80;
-float minTemp = 35;
-float maxTemp = 40;
+float minTemp = 30.3;     //Optimal growth temperature of Saccharomyces cerevisiae is 32.3°C (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
+float maxTemp = 34.3;
 int numSensors = 3;
 int numMeasurements = 10;
 
@@ -31,7 +31,7 @@ void loop()
 {
     float sumTemp = 0;    //Reset sumTemp at the start of each for loop
     float sumHum = 0;     //Reset sumHum at the start of each for loop
-    for (int i = 0; i < numMeasurements; i++)    //Measure temperature and humidity 10 times for each sensor
+    for (int i = 0; i < numMeasurements; i++)    //Measure temperature and humidity (numMeasurements) times for each sensor
     {
         DHT11_1.read(DHT11_1_PIN);    //Read sensor 1
         float temp1 = DHT11_1.temperature;
