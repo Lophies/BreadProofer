@@ -61,22 +61,22 @@ void loop()
 
     if (avgTemp < minTemp) //Low temperature at which the heating elements turn on (in °C)
     {
-        digitalWrite(RELAY_TEMP_1_PIN, HIGH);
-        digitalWrite(RELAY_TEMP_2_PIN, HIGH);
-        digitalWrite(RELAY_TEMP_3_PIN, HIGH);
-    }
-    else if (avgTemp > maxTemp)   //High temperature at which the heating elements turn off (in °C)
-    {
         digitalWrite(RELAY_TEMP_1_PIN, LOW);
         digitalWrite(RELAY_TEMP_2_PIN, LOW);
         digitalWrite(RELAY_TEMP_3_PIN, LOW);
     }
+    else if (avgTemp > maxTemp)   //High temperature at which the heating elements turn off (in °C)
+    {
+        digitalWrite(RELAY_TEMP_1_PIN, HIGH);
+        digitalWrite(RELAY_TEMP_2_PIN, HIGH);
+        digitalWrite(RELAY_TEMP_3_PIN, HIGH);
+    }
     if (avgHum < minHum)  //Low humidity at which the humidifier turns on (in %)
     {
-        digitalWrite(RELAY_HUM_PIN, HIGH);
+        digitalWrite(RELAY_HUM_PIN, LOW);
     }
     else if (avgHum > maxHum) //High humidity at which the humidifier turns off (in %)
     {
-        digitalWrite(RELAY_HUM_PIN, LOW);
+        digitalWrite(RELAY_HUM_PIN, HIGH);
     }
 }
