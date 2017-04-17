@@ -30,3 +30,5 @@ The power cords of the 6 heating elements are cut and one wire of each pair is d
 The other wires of elements 1 and 2 are joined and routed to the Normally Open (NO) contact of relay 1. Those of elements 3 and 4 are routed to the NO contact of relay 2. Those of 5 and 6 are route to the NO contact of relay 3. The Common (C) contacts of relays 1, 2 and 3 are wired to the other wire of the input power cable.
 
 One of the wires of the humidifier power cable goes directly to the input power cable, the other of the two is connected to the NO contact of relay 4. The Common contact of relay 4 is wired to the input power cable.
+
+[![Imgur](http://i.imgur.com/R9KHoGP.jpg:large)](http://i.imgur.com/R9KHoGP.jpg)
