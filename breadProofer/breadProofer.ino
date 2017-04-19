@@ -25,6 +25,7 @@ void setup()
     pinMode(RELAY_TEMP_2_PIN, OUTPUT);
     pinMode(RELAY_TEMP_3_PIN, OUTPUT);
     pinMode(RELAY_HUM_PIN, OUTPUT);
+    Serial.start(9600);     //Starting the serial console for graph output
 }
 
 void loop()
@@ -58,6 +59,11 @@ void loop()
 
     float avgTemp = sumTemp / (numSensors * numMeasurements);   //Calculate the average temperature over the measuring interval (# of sensors * # of measurements)
     float avgHum = sumHum / (numSensors * numMeasurements );   //Calculate the average humidity over the measuring interval (# of sensors * # of measurements)
+
+    //Serial output of the average temperature and average humidity values that can be plotted using the Arduino IDE's serial plotter
+    Serial.print(avgTemp);
+    Serial.print('\t');
+    Serial.println(avgHum);
 
     if (avgTemp < minTemp) //Low temperature at which the heating elements turn on (in °C)
     {
