@@ -1,6 +1,6 @@
 #include <dht11.h>    //Uses the DHT11 Arduino library: http://playground.arduino.cc/Main/DHT11Lib
 
-dht11 DHT11_1;
+dht11 DHT11_1;  //Initialize the DHT11 sensors
 dht11 DHT11_2;
 dht11 DHT11_3;
 
@@ -14,10 +14,10 @@ dht11 DHT11_3;
 
 float minHum = 60;
 float maxHum = 80;
-float minTemp = 30.3;     //Optimal growth temperature of Saccharomyces cerevisiae is 32.3°C (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
+float minTemp = 30.3;       //Optimal growth temperature of Saccharomyces cerevisiae is 32.3°C (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
 float maxTemp = 34.3;
-int numSensors = 3;
-int numMeasurements = 10;
+int numSensors = 3;         //Amount of sensors used
+int numMeasurements = 10;   //Amount of measurements taken in each measuring interval
 
 void setup()
 {
@@ -25,13 +25,13 @@ void setup()
     pinMode(RELAY_TEMP_2_PIN, OUTPUT);
     pinMode(RELAY_TEMP_3_PIN, OUTPUT);
     pinMode(RELAY_HUM_PIN, OUTPUT);
-    Serial.start(9600);     //Starting the serial console for graph output
+    Serial.start(9600);     //Starting the serial console for data output
 }
 
 void loop()
 {
-    float sumTemp = 0;    //Reset sumTemp at the start of each for loop
-    float sumHum = 0;     //Reset sumHum at the start of each for loop
+    float sumTemp = 0;    //Reset sumTemp at the start of each for-loop
+    float sumHum = 0;     //Reset sumHum at the start of each for-loop
     for (int i = 0; i < numMeasurements; i++)    //Measure temperature and humidity (numMeasurements) times for each sensor
     {
         DHT11_1.read(DHT11_1_PIN);    //Read sensor 1
@@ -65,23 +65,23 @@ void loop()
     Serial.print('\t');
     Serial.println(avgHum);
 
-    if (avgTemp < minTemp) //Low temperature at which the heating elements turn on (in °C)
+    if (avgTemp < minTemp)  //Low temperature at which the heating elements turn on (in °C)
     {
         digitalWrite(RELAY_TEMP_1_PIN, LOW);
         digitalWrite(RELAY_TEMP_2_PIN, LOW);
         digitalWrite(RELAY_TEMP_3_PIN, LOW);
     }
-    else if (avgTemp > maxTemp)   //High temperature at which the heating elements turn off (in °C)
+    else if (avgTemp > maxTemp) //High temperature at which the heating elements turn off (in °C)
     {
         digitalWrite(RELAY_TEMP_1_PIN, HIGH);
         digitalWrite(RELAY_TEMP_2_PIN, HIGH);
         digitalWrite(RELAY_TEMP_3_PIN, HIGH);
     }
-    if (avgHum < minHum)  //Low humidity at which the humidifier turns on (in %)
+    if (avgHum < minHum)  //Low humidity at which the humidifier turns on (in % RH)
     {
         digitalWrite(RELAY_HUM_PIN, LOW);
     }
-    else if (avgHum > maxHum) //High humidity at which the humidifier turns off (in %)
+    else if (avgHum > maxHum) //High humidity at which the humidifier turns off (in % RH)
     {
         digitalWrite(RELAY_HUM_PIN, HIGH);
     }
