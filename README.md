@@ -18,10 +18,12 @@ An Arduino-controlled bread proofing box that measures the temperature and humid
     - 2.25 l Removable water tank
     - 4,8 l / 24 h warm mist output
     - 230V, 220W
+- Salvaged Motorola Pebl mini-USB charger
+    - 5V, 1A
 
 ## Connections:
 
-Microcontroller/sensors/relay board power (5V): Ground and 5V lines go from the 5V @1A phone charger to an intermediary perfboard.
+Microcontroller/sensors/relay board power (5V): Ground and 5V lines go from the phone charger to an intermediary perfboard.
 From here, the Arduino Nano is powered on its GND and Vin pins. The DHT11 sensors and the 4-channel relay board are powered from the perfboard to their GND and VCC lines.
 
 Microcontroller/sensors/relay board data connections: The DATA lines on the 3 DHT11 sensors are connected to the MCU's pins 2, 3 and 4.
