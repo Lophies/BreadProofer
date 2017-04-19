@@ -67,4 +67,8 @@ To be done:
 
 ## Pictures:
 
-[![Imgur](http://i.imgur.com/R9KHoGP.jpg:large)](http://i.imgur.com/R9KHoGP.jpg)
+[![Imgur](http://i.imgur.com/R9KHoGP.jpg)](http://imgur.com/a/kUsNQ)
+
+![Imgur](http://i.imgur.com/tIC3VmRl.jpg)![Imgur](http://i.imgur.com/KduqnEql.jpg)
+![Imgur](http://i.imgur.com/sEzSUT2l.jpg)![Imgur](http://i.imgur.com/USNG6VQl.jpg)
+![Imgur](http://i.imgur.com/82RdciXl.jpg)![Imgur](http://i.imgur.com/0Koec39l.jpg)
