@@ -55,14 +55,14 @@ To be done:
     - DHT11 sensors
     - Connections from sensors to MCU
     - Connections from MCU to relay board
-    -
 
 - Placement of 230V electronics
     - 10A circuit breaker, used as main power switch
     - Power supply for 5V electronics (Motorola Pebl charger; 5V, 1000 mA)
-    - Connections to heating elements
-    - Connections to humidifier
-    - Connections to outputs of relay board
+    - Connections from mains to heating elements
+    - Connections from mains to humidifier
+    - Connections from mains to outputs of relay board
+    - Connections from outputs of relay board to heating elements / humidifier
 
 
 ## Pictures:
