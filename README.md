@@ -69,6 +69,6 @@ To be done:
 
 [![Imgur](http://i.imgur.com/R9KHoGP.jpg)](http://imgur.com/a/kUsNQ)
 
-![Imgur](http://i.imgur.com/tIC3VmRm.jpg)![Imgur](http://i.imgur.com/KduqnEqm.jpg)
-![Imgur](http://i.imgur.com/sEzSUT2m.jpg)![Imgur](http://i.imgur.com/USNG6VQm.jpg)
-![Imgur](http://i.imgur.com/82RdciXm.jpg)![Imgur](http://i.imgur.com/0Koec39m.jpg)
+[![Imgur](http://i.imgur.com/tIC3VmRm.jpg)](http://i.imgur.com/tIC3VmR.jpg)[![Imgur](http://i.imgur.com/KduqnEqm.jpg)](http://i.imgur.com/KduqnEq.jpg)
+[![Imgur](http://i.imgur.com/sEzSUT2m.jpg)](http://i.imgur.com/sEzSUT2.jpg)[![Imgur](http://i.imgur.com/USNG6VQm.jpg)](http://i.imgur.com/USNG6VQ.jpg)
+[![Imgur](http://i.imgur.com/82RdciXm.jpg)](http://i.imgur.com/82RdciX.jpg)[![Imgur](http://i.imgur.com/0Koec39m.jpg)](http://i.imgur.com/0Koec39.jpg)
