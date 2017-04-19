@@ -35,10 +35,10 @@ Humidifier power (230V): one of the wires of the humidifier power cable goes dir
 
 ## Settings (to be verified empirically):
 
-Humidity (min/max): 60% / 80%
+Humidity (min/max): 60% / 80%  
 The humidity levels are kept high to avoid the outer layer of the dough from cracking during the proofing process.
 
-Temperature (min/max): 30.3°C / 34.3°C
+Temperature (min/max): 30.3°C / 34.3°C  
 The optimal growth temperature of Saccharomyces cerevisiae is 32.3°C. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
 
 ## Current progress:
