@@ -29,7 +29,7 @@ From here, the Arduino Nano is powered on its GND and Vin pins. The DHT11 sensor
 Microcontroller/sensors/relay board data connections: The DATA lines on the 3 DHT11 sensors are connected to the MCU's pins 2, 3 and 4.
 The IN1, IN2 and IN3 pins on the 4-channel relay board are connected to the MCU's pins 5, 6 and 7 (for the three pairs of heating elements), the IN4 pin on the relay board is connected to the MCU's pin 8 (for the humidifier).
 
-Heating element power (230V): one wire each heating element power cable is connected to the main power cable. The other wires of elements 1 and 2 are joined and routed to the Normally Open (NO) contact of relay 1. Those of elements 3 and 4 are routed to the NO contact of relay 2. Those of 5 and 6 are route to the NO contact of relay 3. The Common (C) contacts of relays 1, 2 and 3 are wired to the other wire of the input power cable.
+Heating element power (230V): one wire of the power cable of each heating element power cable is connected to the main power cable. The other wires of elements 1 and 2 are joined and routed to the Normally Open (NO) contact of relay 1. Those of elements 3 and 4 are routed to the NO contact of relay 2. Those of 5 and 6 are route to the NO contact of relay 3. The Common (C) contacts of relays 1, 2 and 3 are wired to the other wire of the input power cable.
 
 Humidifier power (230V): one of the wires of the humidifier power cable goes directly to the input power cable, the other of the two is connected to the NO contact of relay 4. The C contact of relay 4 is wired to the input power cable.
 
