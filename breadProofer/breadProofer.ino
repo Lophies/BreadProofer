@@ -14,8 +14,8 @@ dht11 DHT11_3;
 
 float minHum = 60;
 float maxHum = 80;
-float minTemp = 30.3;       //Optimal growth temperature of Saccharomyces cerevisiae is 32.3°C (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
-float maxTemp = 34.3;
+float minTemp = 28.3;       //Optimal growth temperature of Saccharomyces cerevisiae is 32.3°C (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3067424/pdf/1861-10.pdf)
+float maxTemp = 32.3;
 int numSensors = 3;         //Amount of sensors used
 int numMeasurements = 10;   //Amount of measurements taken in each measuring interval
 
@@ -25,7 +25,7 @@ void setup()
     pinMode(RELAY_TEMP_2_PIN, OUTPUT);
     pinMode(RELAY_TEMP_3_PIN, OUTPUT);
     pinMode(RELAY_HUM_PIN, OUTPUT);
-    Serial.start(9600);     //Starting the serial console for data output
+    Serial.begin(9600);     //Starting the serial console for data output
 }
 
 void loop()
